@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parallax</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+     <body>
+      <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <section>
+        <img src="/pictures/stars.png" id="stars">
+        <img src="/pictures/moon.png" id="moon">
+        <img src="/pictures/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light Sonata</h2>
+        <a href="#sec" id="btn">Explore</a> 
+        <img src="/pictures/mountains_front.png" id="mountains_front">
+      </section>
+      <div class="sec" id="sec">
+        <h2>Introduce Myself!</h2>
+        <p>Hello, my name is Nelvin Claudius. I'm a 17 years old adult.I live in Indonesia. I'm still a student in Highschool!. I have a passion for doing some coding! , and I enjoy playing video games too! <br><br>I believe in [Your Beliefs or Principles], and I'm constantly seeking new opportunities for personal growth and learning. I look forward to [What You Hope to Achieve or Experience] and connecting with new people. </p>
+      </div>
+
+      <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll',function(){
+          let value = window.scrollY;
+          stars.style.left = value * 0.25 + 'px';
+          moon.style.top = value * 1.05 + 'px';
+          mountains_behind.style.top = value * 0.05 + 'px';
+          mountains_front.style.top = value * 0 + 'px';
+          text.style.marginRight = value * 4 + 'px';
+          text.style.marginTop = value * 1.5 + 'px';
+          btn.style.marginTop = value * 1.5 + 'px';
+          header.style.Top = value * 0.05 + 'px';
+        })
+        </script>
+    </body>
+</html>
